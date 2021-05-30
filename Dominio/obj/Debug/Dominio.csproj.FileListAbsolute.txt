@@ -4,3 +4,9 @@ C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.dll
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.pdb
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\bin\Debug\Dominio.dll
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\bin\Debug\Dominio.pdb
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.dll
+C:\Users\xxxx\OneDrive - frgp.utn.edu.ar\Escritorio\Repositorio Github\git\Tp-asp.net-Baez-Toledo\Dominio\obj\Debug\Dominio.pdb
