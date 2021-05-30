@@ -1,0 +1,11 @@
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Presentacion.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Dominio.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Negocio.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Dominio.pdb
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\obj\Debug\Presentacion.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\Presentacion\obj\Debug\Presentacion.pdb

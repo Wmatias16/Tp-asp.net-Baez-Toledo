@@ -74,3 +74,7 @@ C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\obj\Debug\App-web.
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\obj\Debug\App-web.csproj.CopyComplete
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\obj\Debug\App-web.dll
 C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\obj\Debug\App-web.pdb
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\bin\Dominio.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\bin\Negocio.dll
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\bin\Dominio.pdb
+C:\Users\Maty\Documents\GitHub\Tp-asp.net-Baez-Toledo\App-web\bin\Negocio.pdb

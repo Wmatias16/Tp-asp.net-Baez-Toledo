@@ -34,7 +34,7 @@ namespace Negocio
         }
 
         public SqlDataReader Leer
-        {   
+        {
             get { return leer; }
         }
 
@@ -47,10 +47,10 @@ namespace Negocio
 
         public void CerraConexion()
         {
-            if(leer != null)
+            if (leer != null)
             {
                 leer.Close();
-                
+
             }
 
             conexion.Close();

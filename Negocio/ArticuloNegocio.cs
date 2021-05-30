@@ -17,7 +17,7 @@ namespace Negocio
             List<Articulo> articulos = new List<Articulo>();
 
             string inner = "SELECT A.Codigo,A.Nombre,A.Descripcion,A.Precio,C.Descripcion AS Categoria,M.Descripcion AS Marca from ARTICULOS AS A  INNER JOIN CATEGORIAS AS C ON A.IdCategoria = C.Id INNER JOIN MARCAS AS M ON A.IdMarca = M.Id WHERE ";
-            string filter = "A.Codigo LIKE '%" + txtFiltrar + "%'OR A.Nombre LIKE '%" + txtFiltrar  + "%' OR A.Precio LIKE '%" + txtFiltrar  + "%'";
+            string filter = "A.Codigo LIKE '%" + txtFiltrar + "%'OR A.Nombre LIKE '%" + txtFiltrar + "%' OR A.Precio LIKE '%" + txtFiltrar + "%'";
             try
             {
                 datos.SetearConsulta(inner + filter);
@@ -55,8 +55,8 @@ namespace Negocio
 
             try
             {
-                string valores = "values('" + art.CodigoArticulo + "', '" + art.Nombre + "', '" + art.Descripcion + "', '" + art.Marca.Id + "', '" + art.Categoria.Id + "', '" + art.Imagen + "','"+ art.Precio + "')";
-                db.SetearConsulta("INSERT INTO Articulos (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) "+valores);
+                string valores = "values('" + art.CodigoArticulo + "', '" + art.Nombre + "', '" + art.Descripcion + "', '" + art.Marca.Id + "', '" + art.Categoria.Id + "', '" + art.Imagen + "','" + art.Precio + "')";
+                db.SetearConsulta("INSERT INTO Articulos (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio) " + valores);
 
                 db.EjectutarAccion();
             }
@@ -68,7 +68,7 @@ namespace Negocio
             {
                 db.CerraConexion();
             }
-        } 
+        }
 
         public void Modificar(Articulo art)
         {
@@ -76,11 +76,11 @@ namespace Negocio
             AccesoDatos db = new AccesoDatos();
 
             try
-            {   
-                db.SetearConsulta("UPDATE Articulos SET Codigo='" + art.CodigoArticulo + "', Nombre='" + art.Nombre + "', Descripcion='" + art.Descripcion + "', IdMarca=" + art.Marca.Id + ", IdCategoria=" + art.Categoria.Id + ", ImagenUrl='" + art.Imagen + "', Precio='" + art.Precio +"' WHERE Id="+art.Id);
+            {
+                db.SetearConsulta("UPDATE Articulos SET Codigo='" + art.CodigoArticulo + "', Nombre='" + art.Nombre + "', Descripcion='" + art.Descripcion + "', IdMarca=" + art.Marca.Id + ", IdCategoria=" + art.Categoria.Id + ", ImagenUrl='" + art.Imagen + "', Precio='" + art.Precio + "' WHERE Id=" + art.Id);
                 db.EjectutarAccion();
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 throw err;
             }
@@ -99,7 +99,7 @@ namespace Negocio
                 db.SetearConsulta("Delete From Articulos where Id = " + id);
                 db.EjectutarAccion();
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 throw err;
             }
@@ -114,24 +114,24 @@ namespace Negocio
             int VerifCantidad = 0;
             bool Verif = true;
             AccesoDatos datos = new AccesoDatos();
-            
+
 
             try
             {
-                datos.SetearConsulta("SELECT count (Codigo) as Codigo from ARTICULOS WHERE Codigo = '" +Codigo+"'");
+                datos.SetearConsulta("SELECT count (Codigo) as Codigo from ARTICULOS WHERE Codigo = '" + Codigo + "'");
                 datos.EjecutarLectura();
 
                 if (datos.Leer.Read())
                 {
-                   VerifCantidad = (Int32)datos.Leer[0];
+                    VerifCantidad = (Int32)datos.Leer[0];
 
-                    if(VerifCantidad > 0)
+                    if (VerifCantidad > 0)
                     {
                         Verif = false;
                     }
 
                 }
- 
+
             }
             catch (Exception err)
             {
@@ -142,7 +142,7 @@ namespace Negocio
                 datos.CerraConexion();
             }
 
-            
+
             return Verif;
         }
 
@@ -156,7 +156,7 @@ namespace Negocio
             {
 
                 string value = "WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
-                datos.SetearConsulta("SELECT A.Id,A.Codigo, A.Nombre, A.Descripcion,A.ImagenUrl, M.Descripcion AS Marca, C.Descripcion AS Categoria, ImagenUrl, A.Precio FROM ARTICULOS AS A, MARCAS AS M, CATEGORIAS AS C "+ value);
+                datos.SetearConsulta("SELECT A.Id,A.Codigo, A.Nombre, A.Descripcion,A.ImagenUrl, M.Descripcion AS Marca, C.Descripcion AS Categoria, ImagenUrl, A.Precio FROM ARTICULOS AS A, MARCAS AS M, CATEGORIAS AS C " + value);
                 datos.EjecutarLectura();
 
                 while (datos.Leer.Read())
@@ -166,13 +166,13 @@ namespace Negocio
                     art.Id = (int)datos.Leer["Id"];
                     art.Nombre = (string)datos.Leer["Nombre"];
                     art.Marca = new Marca((string)datos.Leer["Marca"]);
-                    art.Precio = decimal.Round((decimal)datos.Leer["Precio"],2);
+                    art.Precio = decimal.Round((decimal)datos.Leer["Precio"], 2);
                     art.Imagen = (string)datos.Leer["ImagenUrl"];
                     art.Categoria = new Categoria((string)datos.Leer["Categoria"]);
                     art.Descripcion = (string)datos.Leer["Descripcion"];
                     art.CodigoArticulo = (string)datos.Leer["Codigo"];
 
-                   
+
 
                     articulos.Add(art);
                 }
@@ -189,5 +189,5 @@ namespace Negocio
         }
     }
 
-    
+
 }

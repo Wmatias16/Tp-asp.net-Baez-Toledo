@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Marca
     {
-       
+
         private int id;
         private string descripcion;
 

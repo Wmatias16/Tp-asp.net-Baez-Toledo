@@ -10,7 +10,7 @@ namespace Negocio
     public class MarcaNegocio
     {
 
-        public List<Marca> listar() 
+        public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
             AccesoDatos datos = new AccesoDatos();
@@ -26,7 +26,7 @@ namespace Negocio
                 }
                 return lista;
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 throw err;
             }
@@ -35,7 +35,7 @@ namespace Negocio
                 datos.CerraConexion();
             }
 
-            
+
         }
 
     }

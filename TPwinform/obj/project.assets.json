@@ -130,33 +130,6 @@
             "rid": "win"
           }
         }
-      },
-      "Dominio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "System.Data.SqlClient": "4.8.2"
-        },
-        "compile": {
-          "bin/placeholder/Dominio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dominio.dll": {}
-        }
-      },
-      "Negocio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Dominio": "1.0.0",
-          "System.Data.SqlClient": "4.8.2"
-        },
-        "compile": {
-          "bin/placeholder/Negocio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Negocio.dll": {}
-        }
       }
     }
   },
@@ -473,22 +446,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Dominio/1.0.0": {
-      "type": "project",
-      "path": "../Dominio/Dominio.csproj",
-      "msbuildProject": "../Dominio/Dominio.csproj"
-    },
-    "Negocio/1.0.0": {
-      "type": "project",
-      "path": "../Negocio/Negocio.csproj",
-      "msbuildProject": "../Negocio/Negocio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Dominio >= 1.0.0",
-      "Negocio >= 1.0.0",
       "System.Data.SqlClient >= 4.8.2"
     ]
   },
@@ -526,14 +487,7 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {
-            "C:\\Users\\Maty\\Documents\\GitHub\\Tp-asp.net-Baez-Toledo\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\Maty\\Documents\\GitHub\\Tp-asp.net-Baez-Toledo\\Dominio\\Dominio.csproj"
-            },
-            "C:\\Users\\Maty\\Documents\\GitHub\\Tp-asp.net-Baez-Toledo\\Negocio\\Negocio.csproj": {
-              "projectPath": "C:\\Users\\Maty\\Documents\\GitHub\\Tp-asp.net-Baez-Toledo\\Negocio\\Negocio.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

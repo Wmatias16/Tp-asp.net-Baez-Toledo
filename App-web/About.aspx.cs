@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using Dominio;
+
 namespace App_web
 {
     public partial class About : Page
