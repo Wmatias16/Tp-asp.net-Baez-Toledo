@@ -16,15 +16,12 @@ namespace App_web
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
             ArticuloNegocio negocio = new ArticuloNegocio();
-
-            
-
-
+           
             try
             {
                 articulos = negocio.Listar();
+                Session.Add("ListaArticulos", articulos);
             }
             catch
             {
