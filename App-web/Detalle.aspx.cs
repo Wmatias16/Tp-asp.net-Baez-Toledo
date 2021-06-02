@@ -13,9 +13,19 @@ namespace App_web
     {
         public int id;
         public Articulo art;
+        List<CarritoProducto> productos;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Carrito"] == null)
+            {
+                Session.Add("Carrito", new List<CarritoProducto>());
+            }
+            else
+            {
+                productos = (List<CarritoProducto>)Session["Carrito"];
+            }
+
             id = int.Parse(Request.QueryString["id"]);
 
             List<Articulo> articulos = new List<Articulo>();
@@ -24,6 +34,15 @@ namespace App_web
 
             art = articulos.Find(x => x.Id == id);
         
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CarritoNegocio carrito = new CarritoNegocio(productos);
+
+            productos = carrito.Agregar(id);
+            
+            Session.Add("Carrito", productos);
         }
     }
 }

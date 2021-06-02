@@ -20,5 +20,11 @@ namespace Dominio
             get { return this.id; }
             set { id = value; }
         }
+
+        public int Cantidad
+        {
+            get { return this.cantidad; }
+            set { id = value; }
+        }
     }
 }

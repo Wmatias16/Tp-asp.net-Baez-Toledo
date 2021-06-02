@@ -34,7 +34,7 @@
                             </dd>
                         </dl>
                         <hr>
-                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"><i class="fas fa-shopping-cart"></i>Add to cart </a>
+                        <asp:Button ID="btnAgregarCarrito" runat="server" onClick="btnAgregar_Click" class="btn btn-lg btn-outline-primary text-uppercase" Text="Add to cart" />
                     </article>
                 </aside>
             </div>

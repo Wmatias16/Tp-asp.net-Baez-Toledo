@@ -8,31 +8,32 @@ using Dominio;
 namespace Negocio
 {
 
-    
-
-    class CarritoNegocio
+    public class CarritoNegocio
     {
+        private List<CarritoProducto> carrito;
 
-        List<CarritoProducto> carrito = new List<CarritoProducto>();
-
-        
-        public void Agregar(int id)
+        public CarritoNegocio(List<CarritoProducto> carrito)
         {
+            this.carrito = carrito;
+        }
 
+        public List<CarritoProducto> Agregar(int id)
+        {
             CarritoProducto Producto = new CarritoProducto(id);
 
-            if (carrito.Contains(Producto))
+            foreach (CarritoProducto pr in carrito)
             {
-                foreach (CarritoProducto pr in carrito)
+                if (pr.Id == Producto.Id)
                 {
-                    if (pr.Id == Producto.Id) pr.cantidad++;
+                    pr.cantidad++;
+                    return carrito;
                 }
             }
-            else
-            {
-                Producto.cantidad = 1;
-                carrito.Add(Producto);
-            }
+
+            Producto.cantidad = 1;
+            carrito.Add(Producto);
+
+            return carrito;
         }
 
 

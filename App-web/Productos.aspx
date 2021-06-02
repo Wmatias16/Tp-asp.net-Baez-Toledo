@@ -19,7 +19,9 @@
                      <div class="card-body">
                          <h5 class="card-title text-center"><% = item.Nombre %></h5>
                          <p class="card-text text-center" style ="font-size : 24px"><% = item.Precio %>$</p>
-                         <asp:Button ID="btnAgregar" class="btn btn-primary btn-lg btn-block" Onclick="btnAgregar_Click" runat="server" Text="add to cart" />  
+                         
+                         <a href="Detalle.aspx?id=<% = item.Id %>" class="btn btn-primary btn-lg btn-block">Ver detalle</a>
+                     </a>
                      </div>
                     </div>
                 </div>
@@ -27,5 +29,5 @@
         </div>
     </div>
 
-    
+
 </asp:Content>
