@@ -11,12 +11,11 @@ namespace App_web
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        List<CarritoProducto> prods;
+        public List<CarritoProducto> prods;
         protected void Page_Load(object sender, EventArgs e)
         {
             prods = (List<CarritoProducto>)Session["Carrito"];
-            dgv.DataSource = prods;
-            dgv.DataBind();
+
         }
     }
 }

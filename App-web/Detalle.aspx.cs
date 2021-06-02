@@ -32,7 +32,7 @@ namespace App_web
 
             articulos = (List<Articulo>)Session["ListaArticulos"];
 
-            art = articulos.Find(x => x.Id == id);
+            art = articulos.Find(x => x.Id == id);/// buscamos el producto
         
         }
 
@@ -42,6 +42,16 @@ namespace App_web
 
             productos = carrito.Agregar(id);
             
+
+            foreach(CarritoProducto produc in productos)
+            {
+
+                if(produc.Id == id)
+                {
+                    produc.Articulo = art;
+                }
+            }
+
             Session.Add("Carrito", productos);
         }
     }

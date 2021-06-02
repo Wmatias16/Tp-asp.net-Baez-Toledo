@@ -10,7 +10,7 @@ namespace Dominio
     public class CarritoProducto
     {
         private int id;
-        private Articulo art;
+        private Articulo articulo;
         public int cantidad;
 
         public CarritoProducto(int Id) { id = Id; }
@@ -25,6 +25,12 @@ namespace Dominio
         {
             get { return this.cantidad; }
             set { id = value; }
+        }
+
+        public Articulo Articulo
+        {
+            get { return this.articulo; }
+            set { articulo = value; }
         }
     }
 }
