@@ -37,7 +37,7 @@ namespace Negocio
         }
 
 
-        public List<CarritoProducto> EditarCantidad(int id,int cant)
+        public List<CarritoProducto> EditarCantidad(int id, int cant)
         {
 
             foreach (CarritoProducto pr in carrito)
@@ -48,6 +48,15 @@ namespace Negocio
                 }
             }
 
+            return carrito;
+        }
+
+
+        public List<CarritoProducto> EliminarProducto(int id)
+        {
+
+            CarritoProducto elim = carrito.Find(x => x.Id == id); ;
+            carrito.Remove(elim);
             return carrito;
         }
 

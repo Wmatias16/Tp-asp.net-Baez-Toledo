@@ -10,6 +10,7 @@
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Subtotal</th>
+                <th scope="col">Accion</th>
             </tr>
         </thead>
 
@@ -23,6 +24,7 @@
                     </td>
                     <td><%#Eval("Articulo.Precio")%></td>
                     <td><%#Eval("Subtotal")%></td>
+                     <td><asp:Button Text="Eliminar" CssClass="btn btn-primary" ID="btnEliminar" OnClick="btnEliminar_Click" CommandArgument='<%#Eval("Id")%>' runat="server" /></td>
                 </tr>
 
             </ItemTemplate>
