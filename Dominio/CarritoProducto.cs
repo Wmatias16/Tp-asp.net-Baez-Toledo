@@ -12,7 +12,7 @@ namespace Dominio
         private int id;
         private Articulo articulo;
         public int cantidad;
-
+        public decimal subtotal;
         public CarritoProducto(int Id) { id = Id; }
 
         public int Id
@@ -25,6 +25,11 @@ namespace Dominio
         {
             get { return this.cantidad; }
             set { id = value; }
+        }
+        public decimal Subtotal
+        {
+            get { return this.articulo.Precio * this.cantidad; }
+            set { this.subtotal = value; }
         }
 
         public Articulo Articulo

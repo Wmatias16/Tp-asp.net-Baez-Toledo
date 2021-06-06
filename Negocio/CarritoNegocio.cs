@@ -37,5 +37,19 @@ namespace Negocio
         }
 
 
+        public List<CarritoProducto> EditarCantidad(int id,int cant)
+        {
+
+            foreach (CarritoProducto pr in carrito)
+            {
+                if (pr.Id == id)
+                {
+                    pr.cantidad = cant;
+                }
+            }
+
+            return carrito;
+        }
+
     }
 }
