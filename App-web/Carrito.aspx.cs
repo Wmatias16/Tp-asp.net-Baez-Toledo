@@ -31,22 +31,38 @@ namespace App_web
                 repetidor.DataBind();
             }
 
-           
-            
-
+   
         }
 
         protected void txtChangeCantidad(object sender, EventArgs e)
         {
+            
+        }
 
-            /*
-            int cantidad = int.Parse(((TextBox)sender).Text);
+        protected void btnMenos_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
             CarritoNegocio negocio = new CarritoNegocio(prods);
 
-            List<CarritoProducto> nuevoCarrito = negocio.EditarCantidad(1, cantidad);
+            List<CarritoProducto> nuevoCarrito = negocio.EditarCantidad(id, false);
 
             Session.Add("Carrito", nuevoCarrito);
-            */
+            repetidor.DataSource = null;
+            repetidor.DataSource = nuevoCarrito;
+            repetidor.DataBind();
+        }
+
+        protected void btnMas_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+            CarritoNegocio negocio = new CarritoNegocio(prods);
+
+            List<CarritoProducto> nuevoCarrito = negocio.EditarCantidad(id, true);
+
+            Session.Add("Carrito", nuevoCarrito);
+            repetidor.DataSource = null;
+            repetidor.DataSource = nuevoCarrito;
+            repetidor.DataBind();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
