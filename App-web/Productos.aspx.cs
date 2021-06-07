@@ -28,7 +28,8 @@ namespace App_web
             }
             catch (Exception err)
             {
-                
+                Session.Add("Error", err.ToString());
+                Response.Redirect("Error.aspx");
             }
            
         }

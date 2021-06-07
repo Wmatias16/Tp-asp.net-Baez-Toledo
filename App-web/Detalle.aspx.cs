@@ -17,23 +17,47 @@ namespace App_web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Carrito"] == null)
+           
+
+            try
             {
-                Session.Add("Carrito", new List<CarritoProducto>());
+
+                if (Session["Carrito"] == null)
+                {
+                    Session.Add("Carrito", new List<CarritoProducto>());
+                }
+                else
+                {
+                    productos = (List<CarritoProducto>)Session["Carrito"];
+                }
+
+
+                id = int.Parse(Request.QueryString["id"]);
+
+                List<Articulo> articulos = new List<Articulo>();
+
+                articulos = (List<Articulo>)Session["ListaArticulos"];
+
+                art = articulos.Find(x => x.Id == id);/// buscamos el producto
+
+
+                if (art == null)
+                {
+                    Session.Add("Error", "Producto inexistente");
+                    Response.Redirect("Error.aspx");
+                }
+
             }
-            else
+            catch (Exception err)
             {
-                productos = (List<CarritoProducto>)Session["Carrito"];
+
+                Session.Add("Error", err.ToString());
+                Response.Redirect("Error.aspx");
+
             }
 
-            id = int.Parse(Request.QueryString["id"]);
 
-            List<Articulo> articulos = new List<Articulo>();
 
-            articulos = (List<Articulo>)Session["ListaArticulos"];
-
-            art = articulos.Find(x => x.Id == id);/// buscamos el producto
-        
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
