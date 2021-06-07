@@ -2,10 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1 class="text-center">Productos</h1>
 
-
-    <div class="container">
+    <div class="container" style="margin-top:25px;">
 
         <div class="row">
 
@@ -27,7 +25,6 @@
             </div>
             <%} %>
         </div>
-
 
     </div>
 
