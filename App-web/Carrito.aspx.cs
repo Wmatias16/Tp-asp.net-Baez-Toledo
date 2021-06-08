@@ -14,6 +14,7 @@ namespace App_web
     {
 
         public List<CarritoProducto> prods;
+        public decimal Total = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,12 +28,30 @@ namespace App_web
 
             if (!IsPostBack)
             {
+
+                Total = CalcularTotal();
+
                 repetidor.DataSource = prods;
                 repetidor.DataBind();
             }
 
-   
         }
+
+        public decimal CalcularTotal()
+        {
+
+            decimal total = 0;
+
+            foreach (CarritoProducto carro in prods)
+            {
+                total += carro.Subtotal;
+                
+            }
+
+            return total;
+
+        }
+
 
         protected void txtChangeCantidad(object sender, EventArgs e)
         {
@@ -50,6 +69,10 @@ namespace App_web
             repetidor.DataSource = null;
             repetidor.DataSource = nuevoCarrito;
             repetidor.DataBind();
+
+            Total = CalcularTotal();
+
+
         }
 
         protected void btnMas_Click(object sender, EventArgs e)
@@ -63,6 +86,9 @@ namespace App_web
             repetidor.DataSource = null;
             repetidor.DataSource = nuevoCarrito;
             repetidor.DataBind();
+
+            Total = CalcularTotal();
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -78,6 +104,10 @@ namespace App_web
             repetidor.DataSource = null;
             repetidor.DataSource = carrito;
             repetidor.DataBind();
+
+            Total = CalcularTotal();
+
+
         }
 
     }
