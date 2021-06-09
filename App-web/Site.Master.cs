@@ -11,7 +11,6 @@ namespace App_web
 {
     public partial class SiteMaster : MasterPage
     {
-
         public List<CarritoProducto> carrito = new List<CarritoProducto>();
 
         protected void Page_Load(object sender, EventArgs e)

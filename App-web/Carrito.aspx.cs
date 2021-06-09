@@ -12,14 +12,12 @@ namespace App_web
 {
     public partial class Carrito : System.Web.UI.Page
     {
-
         public List<CarritoProducto> prods;
         public decimal Total = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             prods = (List<CarritoProducto>)Session["Carrito"];
-
 
             if (prods == null)
             {
@@ -28,34 +26,22 @@ namespace App_web
 
             if (!IsPostBack)
             {
-
                 Total = CalcularTotal();
-
                 repetidor.DataSource = prods;
                 repetidor.DataBind();
             }
-
         }
 
         public decimal CalcularTotal()
         {
-
             decimal total = 0;
 
             foreach (CarritoProducto carro in prods)
             {
-                total += carro.Subtotal;
-                
+                total += carro.Subtotal;                
             }
 
             return total;
-
-        }
-
-
-        protected void txtChangeCantidad(object sender, EventArgs e)
-        {
-            
         }
 
         protected void btnMenos_Click(object sender, EventArgs e)
@@ -71,8 +57,6 @@ namespace App_web
             repetidor.DataBind();
 
             Total = CalcularTotal();
-
-
         }
 
         protected void btnMas_Click(object sender, EventArgs e)
@@ -88,15 +72,12 @@ namespace App_web
             repetidor.DataBind();
 
             Total = CalcularTotal();
-
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {   
-
             var argument = ((Button)sender).CommandArgument;
             CarritoNegocio carritoNeg = new CarritoNegocio(prods);
-
 
             List<CarritoProducto> carrito = carritoNeg.EliminarProducto(int.Parse(argument));
 
@@ -106,8 +87,6 @@ namespace App_web
             repetidor.DataBind();
 
             Total = CalcularTotal();
-
-
         }
 
     }

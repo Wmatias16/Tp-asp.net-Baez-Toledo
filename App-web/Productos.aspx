@@ -3,16 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <div class="container" style="margin-top:25px;">
+    <div class="container" style="margin-top: 25px;">
 
         <div class="row">
-
             <%foreach (Dominio.Articulo item in articulos)
                 {%>
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <a href="Detalle.aspx?id=<% = item.Id %>">
-                        <img src="<% = item.Imagen %>" class="card-img-top" alt="...">
+                        <img src="<% = item.Imagen %>" class="card-img-top" style="width: 100%" alt="...">
                     </a>
 
                     <div class="card-body">

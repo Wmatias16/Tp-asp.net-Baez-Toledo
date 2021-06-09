@@ -9,7 +9,6 @@ namespace App_web
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-
         public string error = "Error";
         protected void Page_Load(object sender, EventArgs e)
         {

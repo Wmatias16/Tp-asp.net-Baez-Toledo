@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using Dominio;
 using Negocio;
 
@@ -14,17 +13,14 @@ namespace App_web
     {
         public List<Articulo> articulos;
 
-       
         protected void Page_Load(object sender, EventArgs e)
         {
-
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             try
             {
                 articulos = negocio.Listar();
-                Session.Add("ListaArticulos", articulos);
-                                            
+                Session.Add("ListaArticulos", articulos);                                            
             }
             catch (Exception err)
             {
@@ -32,9 +28,7 @@ namespace App_web
                 Response.Redirect("Error.aspx");
             }
            
-        }
-       
-
+        }      
 
     }
 }
