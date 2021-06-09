@@ -12,10 +12,10 @@ namespace App_web
     public partial class Productos : System.Web.UI.Page
     {
         public List<Articulo> articulos;
-
+        public ArticuloNegocio negocio = new ArticuloNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
+            
 
             try
             {
@@ -28,7 +28,15 @@ namespace App_web
                 Response.Redirect("Error.aspx");
             }
            
-        }      
+        }
+
+        protected void FiltrarTexto(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            articulos = negocio.Filtrar(TextBoxFiltrar.Text);
+            Session.Add("ListaArticulos", articulos);
+            
+        }
 
     }
 }

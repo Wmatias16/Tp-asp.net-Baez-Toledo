@@ -16,13 +16,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             List<Articulo> articulos = new List<Articulo>();
 
-            string inner = "SELECT A.Codigo,A.Nombre,A.Descripcion,A.Precio,C.Descripcion AS Categoria,M.Descripcion AS Marca from ARTICULOS AS A  INNER JOIN CATEGORIAS AS C ON A.IdCategoria = C.Id INNER JOIN MARCAS AS M ON A.IdMarca = M.Id WHERE ";
+            string inner = "SELECT distinct A.Codigo,A.Nombre,A.Descripcion,A.Precio,A.ImagenUrl,C.Descripcion AS Categoria,M.Descripcion AS Marca from ARTICULOS AS A  INNER JOIN CATEGORIAS AS C ON A.IdCategoria = C.Id INNER JOIN MARCAS AS M ON A.IdMarca = M.Id WHERE ";
             string filter = "A.Codigo LIKE '%" + txtFiltrar + "%'OR A.Nombre LIKE '%" + txtFiltrar + "%' OR A.Precio LIKE '%" + txtFiltrar + "%'";
             try
             {
                 datos.SetearConsulta(inner + filter);
                 datos.EjecutarLectura();
-
+                
                 while (datos.Leer.Read())
                 {
                     Articulo art = new Articulo();
@@ -33,6 +33,7 @@ namespace Negocio
                     art.Categoria = new Categoria((string)datos.Leer["Categoria"]);
                     art.Descripcion = (string)datos.Leer["Descripcion"];
                     art.CodigoArticulo = (string)datos.Leer["Codigo"];
+                    art.Imagen = (string)datos.Leer["ImagenUrl"];
 
                     articulos.Add(art);
                 }

@@ -4,7 +4,21 @@
 
 
     <div class="container" style="margin-top: 25px;">
+        <div class="row">
+            <div class="col-8">
 
+               
+
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Filtrar</span>
+                    </div>
+                     <asp:TextBox ID="TextBoxFiltrar" runat="server" OnTextChanged="FiltrarTexto" placeholder="buscar" ></asp:TextBox>
+                </div>
+
+
+            </div>
+        </div>
         <div class="row">
             <%foreach (Dominio.Articulo item in articulos)
                 {%>
